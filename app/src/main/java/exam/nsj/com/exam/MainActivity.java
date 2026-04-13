@@ -142,10 +142,8 @@ public class MainActivity extends AppCompatActivity {
     private void importFromUri(Uri uri) {
         progressBar.setVisibility(View.VISIBLE);
         new Thread(() -> {
-            try {
-                InputStream is = getContentResolver().openInputStream(uri);
+            try (InputStream is = getContentResolver().openInputStream(uri)) {
                 List<ExamModel> exams = ExcelHelper.importFromStream(is);
-                is.close();
                 viewModel.importExams(exams, () ->
                     runOnUiThread(() -> {
                         progressBar.setVisibility(View.GONE);
@@ -164,10 +162,8 @@ public class MainActivity extends AppCompatActivity {
     private void exportToUri(Uri uri) {
         progressBar.setVisibility(View.VISIBLE);
         viewModel.getAllExamsSync(exams -> {
-            try {
-                OutputStream os = getContentResolver().openOutputStream(uri);
+            try (OutputStream os = getContentResolver().openOutputStream(uri)) {
                 ExcelHelper.exportToStream(exams, os);
-                os.close();
                 runOnUiThread(() -> {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(this, getString(R.string.export_success, exams.size()), Toast.LENGTH_SHORT).show();
