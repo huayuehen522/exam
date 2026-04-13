@@ -1,3 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Exam</string>
+    <string name="app_name">题库管理</string>
+    <string name="add_exam">添加题目</string>
+    <string name="edit_exam">编辑题目</string>
+    <string name="import_excel">导入Excel</string>
+    <string name="export_excel">导出Excel</string>
+    <string name="clear_all">清空题库</string>
+    <string name="empty_hint">暂无题目，点击右下角添加</string>
+    <string name="hint_id_orig">题目编号</string>
+    <string name="hint_content">题目内容 *</string>
+    <string name="hint_type">题目类型</string>
+    <string name="hint_option1">选项A</string>
+    <string name="hint_option2">选项B</string>
+    <string name="hint_option3">选项C</string>
+    <string name="hint_option4">选项D</string>
+    <string name="hint_option5">选项E（可选）</string>
+    <string name="hint_option6">选项F（可选）</string>
+    <string name="hint_answer">答案 *</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="delete_title">删除题目</string>
+    <string name="delete_message">确定要删除这道题目吗？</string>
+    <string name="clear_title">清空题库</string>
+    <string name="clear_message">确定要清空所有题目吗？此操作不可恢复。</string>
+    <string name="cleared">题库已清空</string>
+    <string name="saved">保存成功</string>
+    <string name="updated">更新成功</string>
+    <string name="content_required">请输入题目内容</string>
+    <string name="answer_required">请输入答案</string>
+    <string name="import_success">成功导入 %1$d 道题目</string>
+    <string name="import_failed">导入失败：</string>
+    <string name="export_success">成功导出 %1$d 道题目</string>
+    <string name="export_failed">导出失败：</string>
+    <string name="answer_label">答案：</string>
 </resources>

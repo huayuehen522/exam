@@ -1,33 +1,17 @@
 package exam.nsj.com.exam;
 
-import android.content.Context;
-import android.util.Log;
+import androidx.multidex.MultiDexApplication;
 
-/**
- * Created by Ni Shaojian on 2018/3/29.
- */
-
-public class Application extends android.app.Application {
-    private static Context context;
-    public static Context getAppContext() {
-        return Application.context;
-    }
+public class Application extends MultiDexApplication {
+    private static Application instance;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Application.context = getApplicationContext();
+        instance = this;
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-        Log.i(Application.class.getSimpleName(), "[force stop app], onTerminate");
-    }
-
-    @Override
-    public void onTrimMemory(int level) {
-        super.onTrimMemory(level);
-        Log.i(Application.class.getSimpleName(), "[force stop app], onTrimMemory");
+    public static Application getAppContext() {
+        return instance;
     }
 }
